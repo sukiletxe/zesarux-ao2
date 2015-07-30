@@ -1,4 +1,4 @@
-import argparse
+import argparse, platform
 parser = argparse.ArgumentParser(prog = "Screen reader filter for ZEsarUX")
 if platform.system() == 'Windows':
     parser.add_argument("file",  help ="Specifies the input file.")

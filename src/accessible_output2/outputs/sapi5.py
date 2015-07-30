@@ -78,7 +78,7 @@ class SAPI5(Output):
  def set_volume(self, value):
   self.object.Volume = value
 
- def speak(self, text, interrupt=False, wait=False):
+ def speak(self, text, interrupt=False):
   if interrupt:
    self.silence()
   # We need to do the pitch in XML here
