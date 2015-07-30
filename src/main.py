@@ -1,8 +1,9 @@
 import cmd, platform, sys
 import tts, time
-import fix_win32com
-if hasattr(sys, "frozen"):
-    fix_win32com.fix()
+if platform.system() == 'Windows':
+    import fix_win32com
+    if hasattr(sys, "frozen"):
+        fix_win32com.fix()
 tts.set_output()
 if platform.system() == 'Windows':
     with open(cmd.args.file) as f1:
