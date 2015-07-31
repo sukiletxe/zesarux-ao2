@@ -17,7 +17,7 @@ setup(
     name = "ZEsarUX Ao2",
     author = "Sukil Etxenike",
     author_email = "sukiletxe@yahoo.es",
-    version = "1.0",
+    version = "1.1",
     data_files= get_data() + [("", ['../readme.html'])] + accessible_output2.find_datafiles(),
     packages = find_packages(),
     options = {
