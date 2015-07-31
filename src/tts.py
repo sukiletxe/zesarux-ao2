@@ -30,15 +30,15 @@ def menu():
         print("Invalid option.")
         menu()
 
-def set_output():
+def set_output(output):
     global o, vlist
-    if cmd.args.sapi != 0 and platform.system() == 'Windows':
+    if output != 0 and platform.system() == 'Windows':
         o = ao2.sapi5.SAPI5()
         vlist = o.list_voices()
-        if cmd.args.sapi == -1:
+        if output == -1:
             menu()
         else:
-            o.set_voice(vlist[cmd.args.sapi-1])
+            o.set_voice(vlist[output-1])
     else:
         o = ao2.auto.Auto()
         if get_output() == "sapi5":

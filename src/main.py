@@ -4,7 +4,7 @@ if platform.system() == 'Windows':
     import fix_win32com
     if hasattr(sys, "frozen"):
         fix_win32com.fix()
-tts.set_output()
+tts.set_output(cmd.args.sapi)
 if platform.system() == 'Windows':
     with open(cmd.args.file) as f1:
         for line in f1:
