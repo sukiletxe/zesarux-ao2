@@ -5,7 +5,7 @@ from .base import Output, OutputError
 import pywintypes
 import logging
 log = logging.getLogger(__name__)
-
+import time
 
 SVSFDefault = 0
 SVSFlagsAsync = 1
@@ -84,7 +84,13 @@ class SAPI5(Output):
   # We need to do the pitch in XML here
   textOutput = "<pitch absmiddle=\"%d\">%s</pitch>" % (round(self._pitch), text.replace("<", "&lt;"))
   self.object.Speak(textOutput, SVSFlagsAsync | SVSFIsXML)
- 
+  if interrupt == False:
+   while True:
+    if self.is_speaking() == True:
+     time.sleep(0.05)
+    else:
+     break
+
  def silence(self):
   self.object.Speak("", SVSFlagsAsync | SVSFPurgeBeforeSpeak)
 
