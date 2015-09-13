@@ -16,5 +16,4 @@ if platform.system() == 'Windows':
                     break
 else:
     tts.speak(cmd.args.text, False)
-    for char in text:
-        time.sleep(cmd.args.wait)
+    time.sleep(len(cmd.args.text) * cmd.args.wait)

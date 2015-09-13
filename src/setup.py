@@ -19,7 +19,7 @@ setup(
     author = "Sukil Etxenike",
     author_email = "sukiletxe@yahoo.es",
     version = version.readline().strip(),
-    data_files= get_data() + [("", ['../readme.html', '../license.txt'])] + accessible_output2.find_datafiles() + [("scripts", glob('../scripts/*'))],
+    data_files= get_data() + [("", ['../readme.html', '../license.txt', 'version.txt'])] + accessible_output2.find_datafiles() + [("scripts", glob('../scripts/*'))],
     packages = find_packages(),
     options = {
         "py2exe":{
