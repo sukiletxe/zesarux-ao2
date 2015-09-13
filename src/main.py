@@ -8,6 +8,13 @@ tts.set_output(cmd.args.sapi)
 if platform.system() == 'Windows':
     with open(cmd.args.file) as f1:
         for line in f1:
-            tts.speak(line, True)
+            tts.speak(line, False)
+            while True:
+                if tts.get_output().name == "sapi5" and tts.is_speaking:
+                    time.sleep(0.05)
+                else:
+                    break
 else:
     tts.speak(cmd.args.text, False)
+    for char in text:
+        time.sleep(cmd.args.wait)

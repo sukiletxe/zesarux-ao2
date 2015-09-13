@@ -7,8 +7,8 @@ def speak(text, interrupt = False):
 def get_output():
     global o
     if o.name == "Unnamed Output":
-        return o.get_first_available_output().name
-    return o.name
+        return o.get_first_available_output()
+    return o
 
 def is_speaking():
     global o
@@ -41,5 +41,4 @@ def set_output(output):
             o.set_voice(vlist[output-1])
     else:
         o = ao2.auto.Auto()
-        if get_output() == "sapi5":
-            o = ao2.sapi5.SAPI5()
+        o = get_output()

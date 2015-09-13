@@ -3,6 +3,7 @@ import py2exe
 import platform
 from glob import glob
 import accessible_output2
+version = open('version.txt')
 def get_data():
   if platform.architecture()[0][:2] == "32":
    return [
@@ -17,8 +18,8 @@ setup(
     name = "ZEsarUX Ao2",
     author = "Sukil Etxenike",
     author_email = "sukiletxe@yahoo.es",
-    version = "1.1",
-    data_files= get_data() + [("", ['../readme.html'])] + accessible_output2.find_datafiles(),
+    version = version.readline().strip(),
+    data_files= get_data() + [("", ['../readme.html', '../license.txt'])] + accessible_output2.find_datafiles() + [("scripts", glob('../scripts/*'))],
     packages = find_packages(),
     options = {
         "py2exe":{
