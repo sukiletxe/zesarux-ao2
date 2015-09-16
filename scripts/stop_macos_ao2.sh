@@ -3,4 +3,4 @@
 #echo "Deteniendo proceso speech"
 
 
-killall osascript python > /dev/null 2>&1
+killall osascript > /dev/null 2>&1
