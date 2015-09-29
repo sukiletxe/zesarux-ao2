@@ -3,6 +3,8 @@
 ## Introduction
 ZEsarUX AO2 is a program which can interact with many Windows screen readers, Microsoft SAPI 5 and VoiceOver in Mac. As its name suggests, it was thought to be used as a text to speech program with [ZEsarUX](http://sourceforge.net/projects/zesarux) although it  may have more uses.
 
+Note that this was thought to be an added convenience, as ZEsarUX itself includes scripts to be used with eSpeak, Jampal and Balabolka in Windows and Say in Mac.
+
 ## License and source code
 This program is available under the GNU General Public License version 2, or, at your option, any later version. See the included license.txt file or <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>.
 The source code of the program is available at <http://github.com/sukiletxe/zesarux-ao2>.
